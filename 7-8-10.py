@@ -31,3 +31,10 @@ while line:
 print('\n-- Orders --')
 for name, order in orders.items():
 			print('Ok, ' + name + ' you had the ' + order)
+
+
+# Making a program that asks people what their dream vacation would be
+# And then printing it back to them using while loops, flags, and
+# A dictionary.
+vacation = {}
+
