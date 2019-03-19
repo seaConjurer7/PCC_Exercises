@@ -38,3 +38,26 @@ for name, order in orders.items():
 # A dictionary.
 vacation = {}
 
+# Making a flag to control the polling
+polling_active = True
+
+while polling_active:
+	person = input('\nWhat is your name? ')
+	vacay = input('What would your dream vacation be? ')
+
+	# Storing the persons vacay in the dictionary
+	vacation[person] = vacay
+
+	# Asking if there are any other people who would like to awnser
+	again = input('Would you like to add another persons dream vacation? (yes/no) ')
+
+	if again == 'no':
+		polling_active = False
+
+# Printing each persons dream vacations
+print('\n-- Each persons dream vacation --')
+for person, vacay in vacation.items(): 
+	print(person + "'s dream vacation is, " + vacay + '.')
+
+
+
