@@ -58,6 +58,3 @@ while polling_active:
 print('\n-- Each persons dream vacation --')
 for person, vacay in vacation.items(): 
 	print(person + "'s dream vacation is, " + vacay + '.')
-
-
-
