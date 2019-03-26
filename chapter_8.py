@@ -26,3 +26,15 @@ def pets(animal_type, pet_name):
 pets('Dog', 'Spaghetti')
 pets('Cat', 'Pumpernickel')
 
+# Remaking the function above with keyword arguments 
+# to ensure no mixup in the order of inputs
+def describe_pet(animal_type, pet_name):
+	'''Display info about pet'''
+	print('\nI have a ' + animal_type + '.')
+	print('My ' + animal_type + "'s name is " + pet_name.title() + '.')
+
+# Calling the function ensuring that the order no longer matters
+describe_pet(animal_type='Hamster', pet_name='Bob')
+describe_pet(pet_name='Bob',animal_type='Hamster')
+
+
