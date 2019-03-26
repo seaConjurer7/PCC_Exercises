@@ -46,7 +46,3 @@ describe_pet(animal_type='Hamster', pet_name='Bob')
 describe_pet(pet_name='Bob',animal_type='Hamster')
 
 # ------------------------------------------- #
-
-
-
-
