@@ -60,4 +60,5 @@ print(canidate)
 
 president = formatted_name('Donald', 'Trump')
 print(president)
+
 # ------------------------------------------- #
