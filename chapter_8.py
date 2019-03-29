@@ -46,3 +46,18 @@ describe_pet(animal_type='Hamster', pet_name='Bob')
 describe_pet(pet_name='Bob',animal_type='Hamster')
 
 # ------------------------------------------- #
+
+# Making a function that takes a first and last name,
+# and returns a neatly formatted name
+def formatted_name(first_name, last_name):
+	'''Return full name neatly formatted'''
+	full_name = first_name + ' ' + last_name
+	return full_name.title()
+
+# Calling the function with multiple values 
+canidate = formatted_name('\nBernie', 'Sanders')
+print(canidate)
+
+president = formatted_name('Donald', 'Trump')
+print(president)
+# ------------------------------------------- #
