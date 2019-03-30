@@ -62,3 +62,45 @@ president = formatted_name('Donald', 'Trump')
 print(president)
 
 # ------------------------------------------- #
+
+# Making a function that makes makes an argument optional
+# using the same name formatting theme above, with an optional
+# argument for the middle name
+def optional_format(first_name, last_name, middle_name=''):
+	'''Checking for input'''
+	if middle_name: 
+		full_name = first_name + ' ' + middle_name + ' ' + last_name
+	else:
+		full_name = first_name + ' ' + last_name
+
+	return full_name.title()
+
+# Calling the function with an optional middle name
+middleName = optional_format('Billy', 'Joe', 'Bob')
+noMiddleName = optional_format('Billy', 'Joe')
+
+print(middleName)
+print(noMiddleName)
+
+# ------------------------------------------- #
+
+# Making a function that uses a dictionary, to build a
+# portfolio of information for a person
+print('\n')
+
+def buildPerson(first_name, last_name, age=''):
+	'''Return a dictionary of information about a person'''
+	person = {
+		'first': first_name, 
+		'last': last_name
+	}
+
+	if age:
+		person['age'] = age
+	return person
+
+# Calling the function & adding an age to the dictionary
+myself = buildPerson('Carsen', 'Weinzetl', age=19)
+print(myself)
+
+# ------------------------------------------- #
