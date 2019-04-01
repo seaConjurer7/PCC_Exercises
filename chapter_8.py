@@ -104,3 +104,22 @@ myself = buildPerson('Carsen', 'Weinzetl', age=19)
 print(myself)
 
 # ------------------------------------------- #
+
+# Making a function that uses a while loop to take down peoples names
+# and then formats them neatly
+def name_formatter(first_name,last_name):
+	'''Return full name, neatly formatted'''
+	full_name = first_name + ' ' + last_name
+	return full_name.title()
+
+while True:
+	print('\nPlease tell me your name:')
+	print('(enter q at any time to quit)')
+
+	if first_name == 'q': 
+		break
+
+	if last_name == 'q': 
+		break
+
+# ------------------------------------------- #
