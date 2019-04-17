@@ -116,10 +116,35 @@ while True:
 	print('\nPlease tell me your name:')
 	print('(enter q at any time to quit)')
 
+	first_name = input('First name: ')
 	if first_name == 'q': 
 		break
-
+	last_name = input('Last name: ')
 	if last_name == 'q': 
 		break
 
 # ------------------------------------------- #
+
+# Passing lists to a function, making a program that creates custom messages
+# with peoples names that are stored in a list. 
+print('\n')
+
+def greet_users(names):
+	'''Print a simple greeting to each user in the list'''
+	for name in names:
+		msg = 'Hello, ' + name.title() + '!'
+		print(msg)
+
+# Defining two lists to pull from
+usernames = ['Carsen', 'Jeremy', 'Spaghetti']
+other_usernames = ['Eragon', 'Smaug', 'Elvarg']
+
+# Calling the function using two different lists
+greet_users(usernames)
+print('\n')
+greet_users(other_usernames)
+
+# ------------------------------------------- #
+
+#
+
