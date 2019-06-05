@@ -140,5 +140,49 @@ print(make_album_alt())
 
 # ------------------------------------------- #
 
+# Making a function that takes a list of magicians 
+# and prints their names to the console
+
+print('\n')
+
+def print_magic_names(magician_names):
+	
+	for name in magician_names:
+		print(name)
+
+magician_names = ['Bob', 'Chuck', 'Billy']
+
+print_magic_names(magician_names)
+
+# ------------------------------------------- #
+
+# Using the previous function, now adding a 
+# function that will add 'The Great', to the end
+# of each magicians name.
+
+print('\n')
+
+def make_great(magician_names):
+
+	while magician_names:
+		great_name = magician_names.pop()
+		great_magician_names.append(great_name + ', The Great')
+
+great_magician_names = []
+
+# Testing the new function 
+make_great(magician_names[:])
+print_magic_names(great_magician_names)
+
+# Making sure the original list is unharmed
+print('\n')
+print_magic_names(magician_names)
+
+# ------------------------------------------- #
+
+
+
+
+
 
 

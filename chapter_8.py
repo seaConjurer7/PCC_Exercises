@@ -146,5 +146,59 @@ greet_users(other_usernames)
 
 # ------------------------------------------- #
 
-#
+# A program that tracks people orders being made using lists, and no functions
+print('\n')
+
+# Orders that are not completed, and a list for orders that are done
+uncompleted_orders = ['5 Donuts', 'Lrg Machiato and 1 Bagel', 'Lrg Spaghetti']
+completed_orders = []
+
+# Simulating every order being completed until none or left
+while uncompleted_orders:
+	current_order = uncompleted_orders.pop()
+
+	# Simulating creating an order
+	print('Completing order for: ' + current_order)
+	completed_orders.append(current_order)
+
+# Show all completed orders
+print('\nThe following orders have been completed: ')
+for completed_order in completed_orders: 
+	print(completed_order)
+
+# ------------------------------------------- #
+
+# Re-writting the previous program using functions 
+print('\n')
+
+def print_orders(uncompleted_orders, completed_orders):
+	'''
+	Simulating completing each order, until none are left.
+	Move each order to the completed_orders after completing.
+	'''
+	while uncompleted_orders: 
+		current_order = uncompleted_orders.pop()
+
+		# Simulating completing an order
+		print('Completing order: ' + current_order)
+		completed_orders.append(current_order)
+
+def show_completed_orders(completed_orders): 
+	'''Show all the orders that have been finished'''
+	print('\nThe following orders have been completed: ')
+	for completed_order in completed_orders: 
+		print(completed_order)
+
+# Defining uncompleted and completed orders
+uncompleted_orders = ['5 Donuts', 'Lrg Machiato and 1 Bagel', 'Lrg Spaghetti']
+completed_orders = []
+
+# Calling the functions 
+print_orders(uncompleted_orders, completed_orders)
+show_completed_orders(completed_orders)
+
+# ------------------------------------------- #
+
+
+
 
