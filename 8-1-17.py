@@ -146,7 +146,7 @@ print(make_album_alt())
 print('\n')
 
 def print_magic_names(magician_names):
-	
+
 	for name in magician_names:
 		print(name)
 
@@ -179,6 +179,40 @@ print('\n')
 print_magic_names(magician_names)
 
 # ------------------------------------------- #
+
+# Writing a function that accepts a list of items a person
+# wants on their sandwhich, and then prints a summary
+
+print('\n')
+
+def sandwhich(*ingredients):
+	print('This sandwhich has the following items in it: ')
+	for item in ingredients: 
+		print('- ' + item)
+
+sandwhich('Cheese', 'Ham', 'Jam')
+
+# ------------------------------------------- #
+
+# Writing a function that makes a dictionary for info of a car
+# with two positional arguments and an arbitrary argument
+
+print('\n')
+
+def car_info(make, model, **misc_info):
+	spec_sheet = {}
+	spec_sheet['Make'] = make
+	spec_sheet['Model'] = model
+	for key, value in misc_info.items():
+		spec_sheet[key] = value
+	return spec_sheet
+
+my_first_car = car_info('Mazda', 'Miata', year = '1996')
+
+print(my_first_car)
+
+# ------------------------------------------- #
+
 
 
 

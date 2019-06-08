@@ -199,6 +199,114 @@ show_completed_orders(completed_orders)
 
 # ------------------------------------------- #
 
+# Making a function that can accept multiple arguments 
 
+print('\n')
+
+def make_pizza(*toppings): 
+	'''Sumarising the pizza and its toppings'''
+	print('\nMaking a pizza with the following toppings: ')
+	for topping in toppings: 
+		print('- ' + topping)
+
+make_pizza('Spaghetti')
+make_pizza('Mushroom', 'Steak', 'Garlic Bread', 'Lilac')
+
+# ------------------------------------------- #
+
+# Making a function that can accept both a
+# positional argument, and an arbitrary argument
+
+print('\n')
+
+def make_pizzaa(size, *toppings):
+	'''Sumarizing the pizzas size and its toppings'''
+	print('Making a ' + str(size) + 
+		'-inch pizza with the following toppings: ')
+	for topping in toppings: 
+		print('- ' + topping)
+
+make_pizzaa(420, 'Weed')
+make_pizzaa(12, 'Pickles', 'Peanut Butter')
+
+# ------------------------------------------- #
+
+# Using arbitrary keyword arguments
+
+print('\n')
+
+def build_profile(first, last, **user_info): 
+	'''Building a dictionary containing everything we know about a user'''
+	profile = {}
+	profile['first_name'] = first
+	profile['last_name'] = last
+	for key, value in user_info.items():
+		profile[key] = value 
+	return profile
+
+# Creating a variable that calls the function
+user_profile = build_profile('Carsen', 'Weinzetl', 
+	location = 'Barksdale AFB', AFSC = '1W0X1')
+
+# Printing the variable to the console
+print(user_profile)
+
+# ------------------------------------------- #
+
+# Importing a module, and using functions from the module
+
+import pizzamodule
+
+pizzamodule.make_pizza(12, 'Cheese')
+
+# ------------------------------------------- #
+
+# Importing a specific function, from a module
+
+'''
+
+from pizzamodule import make_pizza
+
+make_pizza(12, 'Cheese')
+
+'''
+
+# ------------------------------------------- #
+
+# Importing a module using 'as' to give the module an alias
+
+'''
+
+from pizzamodule import make_pizza as mp
+
+mp(12, 'Cheese')
+
+'''
+
+# ------------------------------------------- #
+
+# Using 'as' to give a module an alias
+
+'''
+
+import pizzamodule as p
+
+p.make_pizza(12, 'Cheese')
+
+'''
+
+# ------------------------------------------- #
+
+# Importing all functions from a module 
+
+'''
+
+from pizzamodule import *
+
+make_pizza(12, 'Cheese')
+
+'''
+
+# ------------------------------------------- #
 
 
