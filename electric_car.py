@@ -40,17 +40,41 @@ class ElectricCar(Car):
 		'''Initialize attributes of the parent class'''
 		super().__init__(make, model, year)
 
-		'''Initialize attribute specific to electric cars'''
-		self.battery_size = 70
+		self.battery = Battery()
+
+	def fill_gas_tank(self):
+		'''Print a message to show that there is no gas tank'''
+		print('This car has no gas tank!')
+
+# Splitting the 'ElectricCar()' class attribute up into its own class
+# to better organise the program 
+class Battery():
+	'''A simple attempt to model a battery for an electric car'''
+
+	def __init__(self, battery_size=70):
+		'''Initialize batterys attributes'''
+		self.battery_size = battery_size
 
 	def describe_battery(self):
 		'''Print a description of the cars battery'''
 		print('This car has a ' + str(self.battery_size) 
 			+ '-kWh battery.')
 
+	def get_range(self):
+		'''Print a statement about the batteries range'''
+		if self.battery_size == 70:
+			range = 240
+		elif self.battery_size == 85:
+			range = 270
+
+		message = 'This car can go approximately ' + str(range)
+		message += ' miles on a full charge.'
+		print(message)
+
 # Checking to make sure that the inheritence worked 
 my_car = ElectricCar('Tesla', 'Model S', 2019)
 print(my_car.get_descriptive_name())
 
-# Checking to make sure the subclasses method works
-my_car.describe_battery()
+# Calling methods from a different class
+my_car.battery.describe_battery()
+my_car.battery.get_range()

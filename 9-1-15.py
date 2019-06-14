@@ -59,3 +59,58 @@ me.reset_login_attempts()
 me.print_login_attempts()
 
 # -------------------------------------------------------------------------- #
+
+# 9-6
+
+# Creating an instance with the subclass IceCreamStand, and calling its method
+# for listing flavors that the stand offers
+print('\n')
+
+Baskin = IceCreamStand('Baskin', 'Ice Cream')
+
+Baskin.list_flavors()
+
+# -------------------------------------------------------------------------- #
+
+# 9-7
+
+# Calling a method from a subclass of 'User()' that lists the privlages of
+# the administrator 
+print('\n')
+
+Admin = Admin('Carsen', 'Weinzetl', 19, 'Green')
+
+# Admin.list_privlages()
+
+# -------------------------------------------------------------------------- #
+
+# 9-8
+
+# Creating another class for the admins privlages, and moving the method to
+# the new class 'Privlages()'
+
+Admin.privlages.list_privlages()
+
+# -------------------------------------------------------------------------- #
+
+# 9-9
+
+# Creating a method within the 'ElectricCar()' class to upgrade the battery
+# inside the vehicle. Then call the get_range() function to show the change
+# in range from the new battery
+print('\n')
+
+# Declaring vehicle, showing its range, and describing the battery
+CarsenEV = ElectricCar('Chevy', 'Volt', 2018)
+CarsenEV.battery.get_range()
+CarsenEV.battery.describe_battery()
+
+# Using the upgrade battery method, showing the actual change of the battery,
+# and improved range
+print('\n')
+
+CarsenEV.battery.upgrade_battery()
+CarsenEV.battery.get_range()
+CarsenEV.battery.describe_battery()
+
+# -------------------------------------------------------------------------- #
