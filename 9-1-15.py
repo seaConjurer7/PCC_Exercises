@@ -33,4 +33,29 @@ me.greet_user()
 
 # -------------------------------------------------------------------------- #
 
+# 9-4 
 
+# Calling new methods that access and modify the attribute 'number_served'
+print('\n')
+Chillis.set_number_served(20)
+Chillis.print_served()
+
+# -------------------------------------------------------------------------- #
+
+# 9-5
+
+# Calling new methods that increase login in attempts, and then reset them
+# back to zero
+print('\n')
+
+# Three login attempts
+me.increment_login_attempts()
+me.increment_login_attempts()
+me.increment_login_attempts()
+me.print_login_attempts()
+
+# Resetting the login count
+me.reset_login_attempts()
+me.print_login_attempts()
+
+# -------------------------------------------------------------------------- #
