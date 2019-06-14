@@ -33,7 +33,7 @@ me.greet_user()
 
 # -------------------------------------------------------------------------- #
 
-# 9-4 
+# 9-4
 
 # Calling new methods that access and modify the attribute 'number_served'
 print('\n')
@@ -75,7 +75,7 @@ Baskin.list_flavors()
 # 9-7
 
 # Calling a method from a subclass of 'User()' that lists the privlages of
-# the administrator 
+# the administrator
 print('\n')
 
 Admin = Admin('Carsen', 'Weinzetl', 19, 'Green')
@@ -112,5 +112,49 @@ print('\n')
 CarsenEV.battery.upgrade_battery()
 CarsenEV.battery.get_range()
 CarsenEV.battery.describe_battery()
+
+# -------------------------------------------------------------------------- #
+
+# 9-13
+
+# Importing 'OrderedDict' from the standard python library
+from collections import OrderedDict
+
+# Utilizing the class
+print('\n')
+
+item_costs = OrderedDict()
+
+item_costs['Cheese'] = 5
+item_costs['Milk'] = 2
+item_costs['Eggs'] = 1
+
+for item, value in item_costs.items():
+    print(item.title() + ' costs ' + str(value) + ' $.')
+
+# -------------------------------------------------------------------------- #
+
+# 9-14
+
+# Calling the method from the Die() class to roll a 6, 10, & 20 sided die
+# 10 times each
+
+# Defining each die 
+D6 = Die(6)
+D10 = Die(10)
+D20 = Die(20)
+
+# Rolling each die 10 times
+print('\n')
+print('Rolling D6 x 10')
+D6.roll_die(10)
+
+print('\n')
+print('Rolling D10 x 10')
+D10.roll_die(10)
+
+print('\n')
+print('Rolling D20 x 10')
+D20.roll_die(10)
 
 # -------------------------------------------------------------------------- #
