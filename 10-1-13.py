@@ -170,6 +170,9 @@ def ReturnContents():
 # Creating a program that takes a file and finds how many times
 # a specific word shows up, throught the entire file
 
+# This program is pulling from files which I dont want to upload to git.
+# They are entire txt files of books from 'Project Gutenburg' 
+
 def WordFinder(file, word):
 	'''
 	Given a file, and a specific word. This function will find all
@@ -197,6 +200,6 @@ def WordFinder(file, word):
 
 # Calling the function to check and make sure this works
 WordFinder('cats.txt', 'cheese')
-WordFinder('frozennorth.txt', 'cold')
+WordFinder('frozennorth.txt', 'frozen')
 
 # -------------------------------------------------------------------------- #
