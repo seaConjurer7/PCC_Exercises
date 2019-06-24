@@ -203,3 +203,14 @@ WordFinder('cats.txt', 'cheese')
 WordFinder('frozennorth.txt', 'frozen')
 
 # -------------------------------------------------------------------------- #
+
+# 10-11 / 10-12
+
+# Writing a program that retrieves a users favorite number and dumps it to a
+# file using json
+import json
+
+# -------------------------------------------------------------------------- #
+
+# 10-13
+
