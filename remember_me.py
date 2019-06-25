@@ -1,22 +1,23 @@
 # Refactoring previous code using functions
-import json 
+import json
+
 
 def Greet_User():
-	'''Greet the user by name'''
+    '''Greet the user by name'''
 
-	filename = 'username.json'
-	try: 
-		with open(filename) as f_obj:
-			username = json.load()
-	except FileNotFoundError:
-		username = input('What is your name?')
-		with open(filename) as f_obj:
-			json.dump(username, f_obj)
-			print('We will remeber you when you come back, ' + username + '!')
-	else:
-		print('Welcome back, ' + username + '!')
+    filename = 'username.json'
+    try:
+        with open(filename) as f_obj:
+            username = json.load()
+    except FileNotFoundError:
+        username = input('What is your name?')
+        with open(filename) as f_obj:
+            json.dump(username, f_obj)
+            print('We will remeber you when you come back, ' + username + '!')
+    else:
+        print('Welcome back, ' + username + '!')
 
-# Calling the function 
+# Calling the function
 Greet_User()
 
 ''' 

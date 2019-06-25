@@ -17,7 +17,7 @@ with open(filename, 'a') as file_object:
 
 # -------------------------------------------------------------------------- #
 
-# 10-4 
+# 10-4
 
 '''
 # Creating a while loop that prompts users for their names,
@@ -82,26 +82,28 @@ while reasons:
 
 # -------------------------------------------------------------------------- #
 
-# 10-6 
+# 10-6
 
 # Creating a program that prompts the user for two inputs to add together
 # and if it gets a ValueError, return an error message
 
 # Making a function to find the sum of two numbers
-def Sum():
-	'''Find the sum of two numbers'''
 
-	try:
-		value1 = int(input('Enter a number: '))
-		value2 = int(input('Enter a number: '))
-		value1 + value2
-	except ValueError:
-		'''Prompting the user to enter an integer'''
-		print('Please enter two integers to add together. ')
-		Sum()
-	else:
-		total = value1 + value2 
-		print('The sum of the two numbers is: ' + str(total))
+
+def Sum():
+    # Find the sum of two numbers
+
+    try:
+        value1 = int(input('Enter a number: '))
+        value2 = int(input('Enter a number: '))
+        value1 + value2
+    except ValueError:
+        # Prompting the user to enter an integer
+        print('Please enter two integers to add together. ')
+        Sum()
+    else:
+        total = value1 + value2
+        print('The sum of the two numbers is: ' + str(total))
 
 # Calling the function
 # Sum()
@@ -125,35 +127,36 @@ However I have implemented the same feature through a function.
 
 # 10-8
 
-# A program that reads from two files, and prints the files contents. 
+# A program that reads from two files, and prints the files contents.
 # The program also will utilize a try block, and use 'except', to return
-# an error message if it cannot locate the file. 
+# an error message if it cannot locate the file.
 
 # The two files will contain the names of random cats & dogs
 
+
 def ReturnContents():
-	'''Reading the contents of two files and then printing them out'''
+    '''Reading the contents of two files and then printing them out'''
 
-	try:
-		'''Checking for the two files'''
-		filenames = ['cats.txt', 'dogs.txt']
+    try:
+        '''Checking for the two files'''
+        filenames = ['cats.txt', 'dogs.txt']
 
-		'''
+        '''
 		Adressing each file, and printing a custom message,
 		that also reads the contents of the file
 		'''
-		for file in filenames: 
-			with open(file, 'r') as fl_obj:
-				content = fl_obj.read()
-				print('The names listed in the file, ' 
-					+ str(file.title())
-					+ ' are: ' 
-					+ str(content.split()))
+        for file in filenames:
+            with open(file, 'r') as fl_obj:
+                content = fl_obj.read()
+                print('The names listed in the file, '
+                      + str(file.title())
+                      + ' are: '
+                        + str(content.split()))
 
-	except FileNotFoundError:
-		print('Could not find the specified files.')
+    except FileNotFoundError:
+        print('Could not find the specified files.')
 
-# Calling the function		
+# Calling the function
 # ReturnContents()
 
 # -------------------------------------------------------------------------- #
@@ -171,32 +174,33 @@ def ReturnContents():
 # a specific word shows up, throught the entire file
 
 # This program is pulling from files which I dont want to upload to git.
-# They are entire txt files of books from 'Project Gutenburg' 
+# They are entire txt files of books from 'Project Gutenburg'
+
 
 def WordFinder(file, word):
-	'''
-	Given a file, and a specific word. This function will find all
-	instances of the specific given word. 
-	'''
+    '''
+    Given a file, and a specific word. This function will find all
+    instances of the specific given word. 
+    '''
 
-	try: 
-		'''Printing a custom statement'''
-		with open(file, 'r') as fl_obj:
+    try:
+        '''Printing a custom statement'''
+        with open(file, 'r') as fl_obj:
 
-			words = fl_obj.read()
-			number_of_words = words.lower().count(word)
-			print('There are, ' 
-				+ str(number_of_words)
-				+ ' instances of the word: '
-				+ word
-				+ ', in the file '
-				+ file )
+            words = fl_obj.read()
+            number_of_words = words.lower().count(word)
+            print('There are, '
+                  + str(number_of_words)
+                  + ' instances of the word: '
+                    + word
+                    + ', in the file '
+                    + file)
 
-	except FileNotFoundError:
-		print('File could not be found. ')
+    except FileNotFoundError:
+        print('File could not be found. ')
 
-	except: 
-		print('Something has gone wrong. ')
+    except:
+        print('Something has gone wrong. ')
 
 # Calling the function to check and make sure this works
 WordFinder('cats.txt', 'cheese')
@@ -208,37 +212,38 @@ WordFinder('frozennorth.txt', 'frozen')
 
 # Writing a program that retrieves a users favorite number and dumps it to a
 # file using json
-import json 
+import json
+
 
 def Favorite_Number():
-	'''Checking to see if the persons favorite number has been stored'''
+    # Checking to see if the persons favorite number has been stored
 
-	try:
-		'''If there is a number stored, print it'''
-		filename = 'favnum.txt'
-		with open(filename, 'r') as fl_obj:
-			number = json.load(fl_obj)
-			print('Your favorite number is, ' 
-				+ str(number)
-				+ '!')
+    try:
+        # If there is a number stored, print it
+        filename = 'favnum.txt'
+        with open(filename, 'r') as fl_obj:
+            number = json.load(fl_obj)
+            print('Your favorite number is, '
+                  + str(number)
+                  + '!')
 
-	except FileNotFoundError:
-		'''If the file cannot be found, prompt the user'''
-		print('File can not be found.')
+    except FileNotFoundError:
+        # If the file cannot be found, prompt the user
+        print('File can not be found.')
 
-	except:
-		'''If there is no number in the file, prompt for input'''
-		favorite_number = input('What is your favorite number? ')
-		'''Write the new fav number to the file'''
-		filename = 'favnum.txt'
-		with open(filename, 'w') as fl_obj:
-			json.dump(favorite_number, fl_obj)	
-		'''Prompt the user that you will remember their number'''
-		print('I will remember that your favorite number is, ' 
-			+ favorite_number
-			+ '!')
+    except:
+        # If there is no number in the file, prompt for input
+        favorite_number = input('What is your favorite number? ')
+        # Write the new fav number to the file
+        filename = 'favnum.txt'
+        with open(filename, 'w') as fl_obj:
+            json.dump(favorite_number, fl_obj)
+        # Prompt the user that you will remember their number
+        print('I will remember that your favorite number is, '
+              + favorite_number
+              + '!')
 
-# Calling the function 
+# Calling the function
 Favorite_Number()
 
 # -------------------------------------------------------------------------- #
@@ -246,24 +251,44 @@ Favorite_Number()
 # 10-13
 
 # Refactoring code from a previous program, to verify the user
-import json 
+
 
 def Greet_User():
-	'''Greet the user by name'''
+    # Greet the user by name
 
-	filename = 'username.json'
-	try: 
-		with open(filename) as f_obj:
-			username = json.load()
+    filename = 'username.json'
+    try:
+        # Loading in the username from the file
+        with open(filename) as f_obj:
+            username = json.load(f_obj)
 
-	except FileNotFoundError:
-		username = input('What is your name?')
-		with open(filename) as f_obj:
-			json.dump(username, f_obj)
-			print('We will remeber you when you come back, ' 
-				+ username 
-				+ '!')
+    except FileNotFoundError:
+        username = input('What is your name?')
+        with open(filename) as f_obj:
+            json.dump(username, f_obj)
+            print('We will remeber you when you come back, '
+                  + username
+                  + '!')
 
-	else:
-		print('Welcome back, ' + username + '!')
+    else:
+        # Verifying the user depending on their awnser
+        awnser = input('Is your username, '
+                       + username
+                       + '? (y/n) ')
+        # Asigning the username, if it is not the current users
+        if awnser == 'y':
+            print('OK!')
+        elif awnser == 'n':
+            username = input('What is your name?')
+            with open(filename) as f_obj:
+                json.dump(username, f_obj)
+                print('We will remeber you when you come back, '
+                      + username
+                      + '!')
+        # Printing the welcome back message
+        print('Welcome back, ' + username + '!')
 
+# Calling the function
+Greet_User()
+
+# -------------------------------------------------------------------------- #
