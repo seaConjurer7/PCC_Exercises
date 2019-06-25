@@ -208,9 +208,62 @@ WordFinder('frozennorth.txt', 'frozen')
 
 # Writing a program that retrieves a users favorite number and dumps it to a
 # file using json
-import json
+import json 
+
+def Favorite_Number():
+	'''Checking to see if the persons favorite number has been stored'''
+
+	try:
+		'''If there is a number stored, print it'''
+		filename = 'favnum.txt'
+		with open(filename, 'r') as fl_obj:
+			number = json.load(fl_obj)
+			print('Your favorite number is, ' 
+				+ str(number)
+				+ '!')
+
+	except FileNotFoundError:
+		'''If the file cannot be found, prompt the user'''
+		print('File can not be found.')
+
+	except:
+		'''If there is no number in the file, prompt for input'''
+		favorite_number = input('What is your favorite number? ')
+		'''Write the new fav number to the file'''
+		filename = 'favnum.txt'
+		with open(filename, 'w') as fl_obj:
+			json.dump(favorite_number, fl_obj)	
+		'''Prompt the user that you will remember their number'''
+		print('I will remember that your favorite number is, ' 
+			+ favorite_number
+			+ '!')
+
+# Calling the function 
+Favorite_Number()
 
 # -------------------------------------------------------------------------- #
 
 # 10-13
+
+# Refactoring code from a previous program, to verify the user
+import json 
+
+def Greet_User():
+	'''Greet the user by name'''
+
+	filename = 'username.json'
+	try: 
+		with open(filename) as f_obj:
+			username = json.load()
+
+	except FileNotFoundError:
+		username = input('What is your name?')
+		with open(filename) as f_obj:
+			json.dump(username, f_obj)
+			print('We will remeber you when you come back, ' 
+				+ username 
+				+ '!')
+
+	else:
+		print('Welcome back, ' + username + '!')
 
